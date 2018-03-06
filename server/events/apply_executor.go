@@ -76,7 +76,7 @@ func (a *ApplyExecutor) Execute(ctx *CommandContext) CommandResponse {
 		}
 		rel, _ := filepath.Rel(repoDir, filepath.Dir(path))
 		plans = append(plans, models.Plan{
-			Project:   models.NewProject(ctx.BaseRepo.FullName, filepath.Dir(rel)),
+			Project:   models.NewProject(ctx.BaseRepo.FullName, rel),
 			LocalPath: path,
 		})
 	}
